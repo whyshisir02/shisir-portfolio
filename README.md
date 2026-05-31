@@ -209,7 +209,7 @@ sessionStorage.clear()
 location.reload()
 ```
 
-To return to system preference:
+To return to default full motion:
 
 ```js
 localStorage.removeItem("shisir-motion")

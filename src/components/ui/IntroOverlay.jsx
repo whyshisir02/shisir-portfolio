@@ -65,9 +65,6 @@ function IntroOverlay() {
                 localStorage.removeItem('shisir-motion')
                 sessionStorage.clear()
                 location.reload()
-
-                sessionStorage.clear()
-                location.reload()
             */}
           </motion.div>
         </motion.div>

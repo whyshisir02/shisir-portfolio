@@ -20,15 +20,12 @@ function getSystemReducedMotion() {
 }
 
 function getMotionSnapshot() {
-  const motionPreference = getStoredPreference() ?? 'system'
-  const shouldReduceMotion =
-    motionPreference === 'full'
-      ? false
-      : motionPreference === 'reduced'
-        ? true
-        : getSystemReducedMotion()
+  const storedPreference = getStoredPreference()
+  const motionPreference = storedPreference ?? 'full'
+  const shouldReduceMotion = motionPreference === 'reduced'
+  const systemReducedMotion = getSystemReducedMotion()
 
-  return { shouldReduceMotion, motionPreference }
+  return { shouldReduceMotion, motionPreference, systemReducedMotion }
 }
 
 function applyMotionAttributes(snapshot) {
@@ -48,11 +45,10 @@ export function useMotionPreference() {
   })
 
   useEffect(() => {
-    if (typeof window === 'undefined' || typeof window.matchMedia !== 'function') {
+    if (typeof window === 'undefined') {
       return undefined
     }
 
-    const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)')
     const handleChange = () => {
       const nextSnapshot = getMotionSnapshot()
       applyMotionAttributes(nextSnapshot)
@@ -60,11 +56,16 @@ export function useMotionPreference() {
     }
 
     handleChange()
-    mediaQuery.addEventListener('change', handleChange)
     window.addEventListener('storage', handleChange)
+    const mediaQuery =
+      typeof window.matchMedia === 'function'
+        ? window.matchMedia('(prefers-reduced-motion: reduce)')
+        : null
+
+    mediaQuery?.addEventListener('change', handleChange)
 
     return () => {
-      mediaQuery.removeEventListener('change', handleChange)
+      mediaQuery?.removeEventListener('change', handleChange)
       window.removeEventListener('storage', handleChange)
     }
   }, [])

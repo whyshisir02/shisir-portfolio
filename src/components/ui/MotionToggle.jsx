@@ -1,7 +1,6 @@
 import { MOTION_STORAGE_KEY, useMotionPreference } from '../../hooks/useMotionPreference'
 
 const motionOptions = [
-  { value: 'system', label: 'system' },
   { value: 'full', label: 'full' },
   { value: 'reduced', label: 'reduced' },
 ]
@@ -14,11 +13,7 @@ function MotionToggle() {
       return
     }
 
-    if (nextMode === 'system') {
-      window.localStorage.removeItem(MOTION_STORAGE_KEY)
-    } else {
-      window.localStorage.setItem(MOTION_STORAGE_KEY, nextMode)
-    }
+    window.localStorage.setItem(MOTION_STORAGE_KEY, nextMode)
 
     window.sessionStorage.clear()
     window.location.reload()
