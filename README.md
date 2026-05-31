@@ -191,6 +191,32 @@ npm run preview   # preview production build
 npm run lint      # run lint checks
 ```
 
+## Motion Testing
+
+To force animations while testing on localhost or the deployed site:
+
+```js
+localStorage.setItem("shisir-motion", "full")
+sessionStorage.clear()
+location.reload()
+```
+
+To force reduced motion:
+
+```js
+localStorage.setItem("shisir-motion", "reduced")
+sessionStorage.clear()
+location.reload()
+```
+
+To return to system preference:
+
+```js
+localStorage.removeItem("shisir-motion")
+sessionStorage.clear()
+location.reload()
+```
+
 ## Deployment Notes
 
 This project uses React Router, so `vercel.json` is included to support direct page refresh on routes such as:

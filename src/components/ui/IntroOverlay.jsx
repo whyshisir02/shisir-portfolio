@@ -53,13 +53,17 @@ function IntroOverlay() {
               developer workspace / backend-first systems
             </p>
             {/* Test again in DevTools:
+                For deployed animation testing:
                 localStorage.setItem('shisir-motion', 'full')
+                sessionStorage.clear()
                 location.reload()
 
                 localStorage.setItem('shisir-motion', 'reduced')
+                sessionStorage.clear()
                 location.reload()
 
                 localStorage.removeItem('shisir-motion')
+                sessionStorage.clear()
                 location.reload()
 
                 sessionStorage.clear()

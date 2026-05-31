@@ -31,8 +31,21 @@ function getMotionSnapshot() {
   return { shouldReduceMotion, motionPreference }
 }
 
+function applyMotionAttributes(snapshot) {
+  if (typeof document === 'undefined') {
+    return
+  }
+
+  document.documentElement.dataset.motionPreference = snapshot.motionPreference
+  document.documentElement.dataset.motionState = snapshot.shouldReduceMotion ? 'reduced' : 'full'
+}
+
 export function useMotionPreference() {
-  const [snapshot, setSnapshot] = useState(getMotionSnapshot)
+  const [snapshot, setSnapshot] = useState(() => {
+    const initialSnapshot = getMotionSnapshot()
+    applyMotionAttributes(initialSnapshot)
+    return initialSnapshot
+  })
 
   useEffect(() => {
     if (typeof window === 'undefined' || typeof window.matchMedia !== 'function') {
@@ -41,9 +54,12 @@ export function useMotionPreference() {
 
     const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)')
     const handleChange = () => {
-      setSnapshot(getMotionSnapshot())
+      const nextSnapshot = getMotionSnapshot()
+      applyMotionAttributes(nextSnapshot)
+      setSnapshot(nextSnapshot)
     }
 
+    handleChange()
     mediaQuery.addEventListener('change', handleChange)
     window.addEventListener('storage', handleChange)
 
