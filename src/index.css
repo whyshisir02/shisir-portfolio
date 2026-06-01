@@ -68,6 +68,7 @@ a {
   overflow: visible;
   line-height: 0.92;
   letter-spacing: -0.044em;
+  text-wrap: balance;
 }
 
 .hero-line-shell {
@@ -261,6 +262,19 @@ a {
 @media (max-width: 1279px) {
   .side-label {
     display: none;
+  }
+}
+
+@media (max-width: 639px) {
+  .poster-heading {
+    line-height: 0.88;
+    letter-spacing: -0.032em;
+  }
+
+  .hero-line-shell,
+  .hero-line-mask,
+  .hero-reveal-line {
+    max-width: 100%;
   }
 }
 

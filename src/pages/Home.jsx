@@ -176,10 +176,10 @@ function Home() {
             home.os / nepal / 2026
           </p>
 
-          <div className="grid gap-10 xl:grid-cols-[minmax(0,1.8fr)_minmax(240px,0.62fr)] xl:items-start xl:gap-10 2xl:gap-12">
+          <div className="grid gap-8 xl:grid-cols-[minmax(0,1.8fr)_minmax(240px,0.62fr)] xl:items-start xl:gap-10 2xl:gap-12">
             <div className="min-w-0">
               <p className="eyebrow text-[11px] font-medium">home.os</p>
-              <h1 className="poster-heading mt-6 max-w-full text-[clamp(4rem,7.6vw,8.5rem)] font-bold text-[var(--text-primary)]">
+              <h1 className="poster-heading mt-6 max-w-full text-[clamp(2.9rem,15.5vw,4.15rem)] font-bold text-[var(--text-primary)] sm:text-[clamp(4rem,7.6vw,8.5rem)]">
                 <span className="hero-line-shell block">
                   <span className="hero-line-mask block">
                     <span ref={shisirRef} className="hero-reveal-line block">
