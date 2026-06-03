@@ -10,9 +10,14 @@ function Contact() {
   const { shouldReduceMotion } = useMotionPreference()
   const contactItems = [
     { label: 'email', value: profile.contact.email, href: `mailto:${profile.contact.email}` },
-    { label: 'github', value: profile.contact.github, href: profile.contact.github },
-    { label: 'linkedin', value: profile.contact.linkedin, href: profile.contact.linkedin },
-    { label: 'resume', value: profile.contact.resumeUrl, href: profile.contact.resumeUrl },
+    { label: 'github', value: 'github.com/whyshisir02', href: profile.contact.github },
+    { label: 'linkedin', value: 'linkedin.com/in/shisirupk061', href: profile.contact.linkedin },
+    {
+      label: 'whatsapp',
+      value: 'Message on WhatsApp',
+      href: 'https://wa.me/9779826352170?text=Hi%20Shisir%2C%20I%20visited%20your%20portfolio%20and%20wanted%20to%20connect.',
+    },
+    { label: 'resume', value: 'Download Resume', href: profile.contact.resumeUrl },
   ]
 
   return (
@@ -28,7 +33,7 @@ function Contact() {
           eyebrow="home.os"
           title="contact.link"
           description={profile.contact.intro}
-          currentLine="email / github / linkedin / resume"
+          currentLine="email / github / linkedin / whatsapp / resume"
         />
 
         <section className="route-line grid gap-6 pt-6 sm:gap-8 lg:grid-cols-[0.8fr_1.2fr]">
@@ -53,6 +58,25 @@ function Contact() {
                 <EditorialLink href={item.href}>{item.value}</EditorialLink>
               </motion.div>
             ))}
+
+            <motion.div
+              initial={shouldReduceMotion ? false : { opacity: 0, y: 24 }}
+              whileInView={shouldReduceMotion ? undefined : { opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.35 }}
+              transition={{
+                duration: 0.45,
+                delay: shouldReduceMotion ? 0 : contactItems.length * 0.08,
+                ease: [0.22, 1, 0.36, 1],
+              }}
+              className="grid gap-2 border-b border-[var(--line)] pb-4 sm:grid-cols-[88px_1fr] sm:items-start"
+            >
+              <p className="mono-detail text-[11px] uppercase tracking-[0.16em] text-[var(--text-muted)]">
+                status
+              </p>
+              <p className="text-sm leading-7 text-[var(--text-primary)] sm:text-base">
+                available for backend/full-stack internship opportunities
+              </p>
+            </motion.div>
           </div>
         </section>
 
@@ -63,11 +87,8 @@ function Contact() {
           transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
           className="route-line pt-8 sm:pt-10"
         >
-          <p className="max-w-2xl font-['Space_Grotesk'] text-xl font-medium tracking-[-0.03em] text-[var(--text-primary)] sm:text-[1.7rem]">
-            I&apos;m not trying to look like a senior developer.
-          </p>
-          <p className="mt-3 max-w-2xl text-base leading-8 text-[var(--text-secondary)] sm:text-lg">
-            I&apos;m trying to become a reliable one by building real systems.
+          <p className="max-w-2xl font-['Space_Grotesk'] text-xl font-medium tracking-[-0.03em] text-[var(--text-primary)] sm:text-[1.55rem] sm:leading-9">
+            Building practical systems, strengthening fundamentals, and improving through real projects.
           </p>
         </motion.section>
       </PageShell>

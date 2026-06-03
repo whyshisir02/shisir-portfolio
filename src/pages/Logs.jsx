@@ -13,7 +13,7 @@ function Logs() {
     <>
       <SEO
         title="Developer Logs | Shisir Uparkoti"
-        description="Developer logs and learning notes by Shisir Uparkoti about SewaFi, backend confidence, full-stack development, and building SHISIR.OS."
+        description="Developer logs and learning notes by Shisir Uparkoti on backend confidence, practical full-stack development, project architecture, and building SHISIR.OS."
         path="/logs"
       />
 

@@ -15,12 +15,12 @@ import { stackPreview } from '../data/skills'
 
 const heroCommands = [
   { label: 'open /work.systems', to: '/work' },
-  { label: 'open /sewafi.case', to: '/work/sewafi' },
+  { label: 'open /logs.index', to: '/logs' },
   { label: 'open /about.shisir', to: '/about' },
 ]
 
 const heroStatus = [
-  { label: 'status', value: 'building SewaFi' },
+  { label: 'status', value: 'building backend systems' },
   { label: 'focus', value: 'backend fundamentals' },
   { label: 'mode', value: 'internship-ready' },
   { label: 'location', value: 'Nepal' },

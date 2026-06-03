@@ -12,7 +12,8 @@ export const journeyItems = [
   {
     year: '2026',
     title: 'system building',
-    description: 'SewaFi, deployment, debugging, API structure, and internship preparation.',
+    description:
+      'Deployment, debugging, API structure, and internship preparation through practical systems like SewaFi.',
   },
 ]
 
