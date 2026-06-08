@@ -30,17 +30,17 @@ export const profile = {
     { label: 'workflow', items: ['Git', 'GitHub', 'Postman', 'Vercel', 'Railway'] },
   ],
   photo: {
-    src: '/public/profile/profile.png',
+    src: '/profile/profile.png',
     alt: 'Portrait of Shisir Uparkoti',
   },
   workspaceImages: [
     {
-      src: '/public/profile/profile.png',
+      src: '/profile/profile.png',
       title: 'focus mode',
       caption: 'Working through backend structure, APIs, and full-stack project flow.',
     },
     {
-      src: '/public/profile/workspace.png',
+      src: '/profile/workspace.png',
       title: 'build mode',
       caption: 'Small notes, code decisions, and improvements that compound over time.',
     },
