@@ -23,7 +23,7 @@ function About() {
 
       <PageShell className="space-y-14 sm:space-y-18">
         <section className="grid gap-10 sm:gap-12 lg:grid-cols-[0.82fr_1.18fr] lg:items-start">
-          <div className="lg:sticky lg:top-28">
+          <div className="lg:sticky lg:top-30 lg:self-start lg:h-fit">
             <PageIntro
               eyebrow="home.os"
               title="about.shisir"
@@ -38,15 +38,34 @@ function About() {
               <p className="eyebrow text-[11px] font-medium">profile.log</p>
               <div>
                 <p className="max-w-3xl text-lg leading-8 text-[var(--text-primary)] sm:text-[1.28rem] sm:leading-9">
-                  {profile.about}
+                  {profile.profileLog}
                 </p>
-                <p className="quote-block mt-5 max-w-2xl pl-5 text-base leading-8 text-[var(--text-secondary)]">
-                  {profile.focus}
-                </p>
-                <p className="mt-5 max-w-2xl text-base leading-8 text-[var(--text-secondary)]">
-                  Projects like SewaFi help me practice these ideas inside a real full-stack workflow, but the bigger
-                  goal is learning how to build reliable systems with cleaner structure and better thinking.
-                </p>
+              </div>
+            </section>
+
+            <section className="route-line grid gap-6 pt-6 md:grid-cols-[0.78fr_1.22fr] md:gap-8">
+              <p className="eyebrow text-[11px] font-medium">location.record</p>
+              <div className="space-y-4">
+                <div className="border-b border-[var(--line)] pb-4">
+                  <p className="mono-detail text-[11px] uppercase tracking-[0.16em] text-[var(--text-muted)]">
+                    base
+                  </p>
+                  <p className="mt-2 text-base leading-8 text-[var(--text-primary)] sm:text-lg">Morang, Nepal</p>
+                </div>
+                <div className="border-b border-[var(--line)] pb-4">
+                  <p className="mono-detail text-[11px] uppercase tracking-[0.16em] text-[var(--text-muted)]">
+                    current
+                  </p>
+                  <p className="mt-2 text-base leading-8 text-[var(--text-primary)] sm:text-lg">Dharan, Nepal</p>
+                </div>
+                <div className="border-b border-[var(--line)] pb-4">
+                  <p className="mono-detail text-[11px] uppercase tracking-[0.16em] text-[var(--text-muted)]">
+                    mode
+                  </p>
+                  <p className="mt-2 text-base leading-8 text-[var(--text-primary)] sm:text-lg">
+                    Remote / Hybrid opportunities
+                  </p>
+                </div>
               </div>
             </section>
 
@@ -60,10 +79,9 @@ function About() {
                   <p>Central Campus of Technology, Dharan</p>
                   <p>Expected completion: 2026</p>
                 </div>
-                {/* <p className="max-w-2xl text-base leading-8 text-[var(--text-secondary)]">
-                  Focused on web development, backend systems, databases, software engineering, and practical
-                  full-stack project building.
-                </p> */}
+                <p className="max-w-2xl text-base leading-8 text-[var(--text-secondary)]">
+                  Focused on web development, backend systems, databases, and practical full-stack project building.
+                </p>
               </div>
             </section>
 
@@ -85,6 +103,33 @@ function About() {
                   >
                     {item}
                   </motion.p>
+                ))}
+              </div>
+            </section>
+
+            <section className="route-line grid gap-6 pt-6 md:grid-cols-[0.78fr_1.22fr] md:gap-8">
+              <p className="eyebrow text-[11px] font-medium">journey.log</p>
+              <div className="space-y-6 sm:space-y-8">
+                {journeyItems.map((item, index) => (
+                  <motion.article
+                    key={item.year}
+                    initial={shouldReduceMotion ? false : { opacity: 0, y: 24 }}
+                    whileInView={shouldReduceMotion ? undefined : { opacity: 1, y: 0 }}
+                    viewport={{ once: true, amount: 0.25 }}
+                    transition={{
+                      duration: 0.45,
+                      delay: shouldReduceMotion ? 0 : index * 0.08,
+                      ease: [0.22, 1, 0.36, 1],
+                    }}
+                    className="border-b border-[var(--line)] pb-6"
+                  >
+                    <p className="mono-detail text-[11px] uppercase tracking-[0.16em] text-[var(--text-muted)]">
+                      {item.year} // {item.title}
+                    </p>
+                    <p className="mt-3 text-base leading-8 text-[var(--text-primary)] sm:text-lg">
+                      {item.description}
+                    </p>
+                  </motion.article>
                 ))}
               </div>
             </section>
@@ -138,33 +183,6 @@ function About() {
                     </motion.figure>
                   )
                 })}
-              </div>
-            </section>
-
-            <section className="route-line grid gap-6 pt-6 md:grid-cols-[0.78fr_1.22fr] md:gap-8">
-              <p className="eyebrow text-[11px] font-medium">journey.log</p>
-              <div className="space-y-6 sm:space-y-8">
-                {journeyItems.map((item, index) => (
-                  <motion.article
-                    key={item.year}
-                    initial={shouldReduceMotion ? false : { opacity: 0, y: 24 }}
-                    whileInView={shouldReduceMotion ? undefined : { opacity: 1, y: 0 }}
-                    viewport={{ once: true, amount: 0.25 }}
-                    transition={{
-                      duration: 0.45,
-                      delay: shouldReduceMotion ? 0 : index * 0.08,
-                      ease: [0.22, 1, 0.36, 1],
-                    }}
-                    className="border-b border-[var(--line)] pb-6"
-                  >
-                    <p className="mono-detail text-[11px] uppercase tracking-[0.16em] text-[var(--text-muted)]">
-                      {item.year} // {item.title}
-                    </p>
-                    <p className="mt-3 text-base leading-8 text-[var(--text-primary)] sm:text-lg">
-                      {item.description}
-                    </p>
-                  </motion.article>
-                ))}
               </div>
             </section>
           </div>

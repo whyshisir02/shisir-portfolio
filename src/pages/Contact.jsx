@@ -74,7 +74,7 @@ function Contact() {
                 status
               </p>
               <p className="text-sm leading-7 text-[var(--text-primary)] sm:text-base">
-                available for backend/full-stack internship opportunities
+                available for job/internship opportunities
               </p>
             </motion.div>
           </div>

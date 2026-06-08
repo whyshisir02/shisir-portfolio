@@ -12,10 +12,11 @@ export const profile = {
     'Shisir Uparkoti is a full-stack developer from Nepal focused on APIs, authentication, dashboards, databases, and practical web products.',
   currentLine: 'status: building backend-first systems | focus: architecture fundamentals',
   identityLine: 'I build practical systems, not just pages.',
-  focus:
-    'I care about understanding how systems work, not only making the UI look good.',
+  focus: 'Backend-first systems and practical full-stack projects.',
   about:
-    "I'm a BIT student from Nepal focused on becoming a confident full-stack developer with backend-first thinking. I care about understanding how systems work: APIs, authentication, databases, dashboards, deployment, and clean project structure.",
+    "I'm a BIT student from Nepal focused on becoming a confident full-stack developer with backend-first thinking. I care about APIs, authentication, databases, dashboards, deployment, and clean project structure.",
+  profileLog:
+    'I learn best by building practical systems and understanding how each part connects: frontend flows, backend APIs, database models, deployment, and debugging. My goal is to become reliable enough to build useful web products with clear structure and better thinking.',
   focusAreas: [
     '[01] backend fundamentals',
     '[02] real project architecture',
@@ -36,12 +37,12 @@ export const profile = {
     {
       src: '/public/profile/profile.png',
       title: 'focus mode',
-      caption: 'Working through backend and full-stack project structure.',
+      caption: 'Working through backend structure, APIs, and full-stack project flow.',
     },
     {
       src: '/public/profile/workspace.png',
       title: 'build mode',
-      caption: 'Notes, code, and small improvements that compound over time.',
+      caption: 'Small notes, code decisions, and improvements that compound over time.',
     },
   ],
   contact: {
